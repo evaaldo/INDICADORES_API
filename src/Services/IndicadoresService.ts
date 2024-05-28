@@ -16,4 +16,16 @@ export class IndicadoresService {
 
     }
 
+    async updateIndicador(numChamado: string, titulo: string, situacao: string, dataAbertura: string, dataSLA: string) {
+
+        await sql`UPDATE CHAMADOS SET TITULO = ${titulo}, SITUACAO = ${situacao}, DATA_ABERTURA = ${dataAbertura}, DATA_SLA = ${dataSLA} WHERE NUM_CHAMADO = ${numChamado}`;
+
+    }
+
+    async deleteIndicador(numChamado: string) {
+
+        await sql`DELETE FROM CHAMADOS WHERE NUM_CHAMADO = ${numChamado}`;
+
+    }
+
 }
