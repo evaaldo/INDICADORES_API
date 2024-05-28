@@ -17,7 +17,7 @@ export class IndicadoresController {
 
         const indicador = request.body;
 
-        await indicadoresService.insertIndicador();
+        await indicadoresService.insertIndicador(indicador.numChamado, indicador.titulo, indicador.situacao, indicador.dataAbertura, indicador.dataSLA);
 
         return response.status(200).json({ message: "Indicador adicionado!" })
 
